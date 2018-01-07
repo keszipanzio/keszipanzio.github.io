@@ -24,6 +24,7 @@
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.hu.js"></script> -->
 <script type="text/javascript" src="/static/js/ui.datepicker-hu.js"></script>
 <script type="text/javascript" src="/static/js/form-submission-handler.js"></script>
+<script type="text/javascript" src="/static/js/language-handler.js"></script>
 
 <style>
 <!-- .en, .de, .it, .hu { display:none; } /* hide all elements with a language class */ -->
@@ -33,47 +34,6 @@
 }
 <!-- .en:lang(en), .de:lang(de), .it:lang(it) { display:block; } /* show those elements that match their language class */ -->
 </style>
-<script type="text/javascript">
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-$(function() {
-	var currentUrl = new URL(window.location.href);
-	//var lang = currentUrl.searchParams.get("lang");
-	var lang = getParameterByName("lang", null);
-	if (lang)
-	{
-		$("[name='nyelv']").val(lang);
-		if (lang==='en')
-		{
-			//$('.en').show();
-			//$("[data-lang='hu']").remove();
-			$("[data-lang='en']").show();
-		}
-		else if(lang==='de')
-		{
-			//$('.de').show();
-			$("[data-lang='de']").show();
-		}
-		else if(lang==='it')
-		{
-			//$('.it').show();
-			$("[data-lang='it']").show();
-		}
-	}
-	else
-	{
-		//$('.hu').show();
-		$("[data-lang='hu']").show();
-	}
-});
-</script>
 
 <script type="text/javascript">
 	$(function() {
